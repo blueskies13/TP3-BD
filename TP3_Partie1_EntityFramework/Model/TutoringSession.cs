@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TP3_Partie1_EntityFramework.Model
 {
-    class TutoringSession : Entity
+   public class TutoringSession : Entity
     {
         public DateTime DateSession { get; set; }
         public int TimeSession { get; set; }

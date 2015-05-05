@@ -7,7 +7,7 @@ using TP3_Partie1_EntityFramework.Model;
 
 namespace TP3_Partie1_EntityFramework.EfEntityFramework
 {
-    class EfDataBaseHelper
+    public class EfDataBaseHelper
     {
         public EfEntityRepository<Tutor> _tutorsRepository;
         public EfEntityRepository<HelpedStudent> _studentsRepository;
