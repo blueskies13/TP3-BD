@@ -14,16 +14,28 @@ namespace TutoratAppl.Controller
     public class TutorController
     {
 
-        IEntityRepository<Tutor> _tutorsRepository { get; set; }
+       public  IEntityRepository<Tutor> _tutorsRepository { get; set; }
 
         public TutorController(IEntityRepository<Tutor> tutorRepository)
         {
             _tutorsRepository = tutorRepository;
         }
 
-        public void ListAll() {
-            var tutors = new TutorListVM();
-            var tutorsList = new TutorListView();
+        public void ListAll() 
+        {
+            var tutors =  _tutorsRepository.GetAll().ToList<Tutor>();
+            var TutorList = new List<TutorListVM>();
+         
+            foreach(Tutor t in tutors)
+            {
+                TutorList.Add(new TutorListVM()
+                {
+                    EmailAddress = t.EmailAddress,
+                    FirstName = t.FirstName,
+                    LastName = t.LastName
+                });
+            }
+           new TutorListView(TutorList).Display();
         }
         public void ListAllWithWorkingHoursTotal(){}
         public void ListWhenNextTutoringSession(){}

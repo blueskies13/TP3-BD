@@ -12,19 +12,18 @@ namespace TutoratAppl.View
 {
    public class TutorListView
     {
-        IEnumerable<TutorListVM> _tutorList { get; set; }
+       public IEnumerable<TutorListVM> _tutorList { get; set; }
 
-        void Display() 
+        public void Display() 
         { 
             var DbContext = new TutoringDbContext();
             foreach (var tutors in DbContext.Tutors)
             {
                 Console.WriteLine(tutors.ToString());
-                DbContext.SaveChanges();
             }
             Console.ReadKey(); 
         }
-        TutorListView(IEnumerable<TutorListVM> tutorList)
+        public TutorListView(IEnumerable<TutorListVM> tutorList)
         {
             _tutorList = tutorList;
         }

@@ -7,11 +7,11 @@ using TutoratAppl.ViewModel;
 
 namespace TutoratAppl.View
 {
-    class HelpedListView
+     public class HelpedListView
     {
-         IEnumerable<HelpedListVM> _helpedList { get; set; }
-        void Display() { }
-        HelpedListView(IEnumerable<HelpedListVM> helpedList)
+        public IEnumerable<HelpedListVM> _helpedList { get; set; }
+        public void Display() { }
+        public HelpedListView(IEnumerable<HelpedListVM> helpedList)
         {
             _helpedList = helpedList;
         }

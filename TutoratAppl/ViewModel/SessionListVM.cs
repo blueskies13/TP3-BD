@@ -7,7 +7,7 @@ using TutoratAppl.ViewModel;
 
 namespace TutoratAppl.ViewModel
 {
-    class SessionListVM
+    public class SessionListVM
     {
 
         public int Id { get; set; }

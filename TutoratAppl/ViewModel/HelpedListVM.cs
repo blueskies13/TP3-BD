@@ -7,7 +7,7 @@ using TutoratAppl.ViewModel;
 
 namespace TutoratAppl.ViewModel
 {
-    class HelpedListVM
+    public class HelpedListVM
     {
         public int Id { get; set; }
         public string LastName { get; set; }
