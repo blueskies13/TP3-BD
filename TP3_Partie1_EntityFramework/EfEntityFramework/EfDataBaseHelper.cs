@@ -24,7 +24,7 @@ namespace TP3_Partie1_EntityFramework.EfEntityFramework
         {
             DeleteAll();
             AddData();
-            ShowAll();
+           // ShowAll();
         }
 
         public void DeleteAll()

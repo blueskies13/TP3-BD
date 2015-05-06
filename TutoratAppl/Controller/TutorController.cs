@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using TP3_Partie1_EntityFramework;
 using TP3_Partie1_EntityFramework.EfEntityFramework;
 using TP3_Partie1_EntityFramework.Model;
+using TutoratAppl.View;
+using TutoratAppl.ViewModel;
 
 namespace TutoratAppl.Controller
 {
@@ -19,7 +21,10 @@ namespace TutoratAppl.Controller
             _tutorsRepository = tutorRepository;
         }
 
-        public void ListAll(){}
+        public void ListAll() {
+            var tutors = new TutorListVM();
+            var tutorsList = new TutorListView();
+        }
         public void ListAllWithWorkingHoursTotal(){}
         public void ListWhenNextTutoringSession(){}
         public void ListWhenWithoutSession(DateTime sessionDate){}

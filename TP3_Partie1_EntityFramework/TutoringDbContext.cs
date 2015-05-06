@@ -9,7 +9,7 @@ using TP3_Partie1_EntityFramework.Model;
 
 namespace TP3_Partie1_EntityFramework
 {
-    class TutoringDbContext : DbContext
+    public class TutoringDbContext : DbContext
     {
 
         public DbSet<Tutor> Tutors { get; set; }

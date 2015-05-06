@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP3_Partie1_EntityFramework.Model;
+using TutoratAppl.ViewModel;
 
 namespace TutoratAppl.ViewModel
 {
-    public class TutorListVM : Entity
+    class HelpedListVM
     {
         public int Id { get; set; }
         public string LastName { get; set; }
