@@ -13,11 +13,19 @@ namespace TutoratAppl
     {
         static void Main(string[] args)
         {
-            var dataBaseHelper = new EfDataBaseHelper();
-            dataBaseHelper.SeedTables();
+           var dataBaseHelper = new EfDataBaseHelper();
+           dataBaseHelper.SeedTables();
+           
            var Tutors = new EfEntityRepository<Tutor>();
-           var controler = new TutorController(Tutors);
-           controler.ListAll();
+           var tutorController = new TutorController(Tutors);
+           var Students = new EfEntityRepository<HelpedStudent>();
+           var studentController = new HelpedController(Students);
+           var TutoringSession = new EfEntityRepository<TutoringSession>();
+           var tutoringSessionController = new SessionController(TutoringSession);
+
+           tutorController.ListAll();
+           studentController.ListAll();
+           tutoringSessionController.ListAll();
         }
     }
 }

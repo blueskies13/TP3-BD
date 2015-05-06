@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TutoratAppl.ViewModel;
+using TP3_Partie1_EntityFramework.Model;
 
 namespace TutoratAppl.ViewModel
 {
     public class SessionListVM
     {
 
-        public int Id { get; set; }
         public string HelpedLastName { get; set; }
         public string HelpedFirstName { get; set; }
         public DateTime DateTimeSession { get; set; }
@@ -19,6 +19,9 @@ namespace TutoratAppl.ViewModel
         public string TutorFirstName { get; set; }
         public string TutorLastName { get; set; }
 
-        public override String ToString() { return Id +"," + DateTimeSession.ToString() + LenghtSession + "," + HelpedLastName + "," + HelpedFirstName + ","+ TutorFirstName +"," + TutorLastName ; }
+        public Tutor TutorId { get; set; }
+        public HelpedStudent HelpedId { get; set; }
+
+        public override String ToString() { return DateTimeSession.ToString() + LenghtSession + "," + HelpedLastName + "," + HelpedFirstName + ","+ TutorFirstName +"," + TutorLastName ; }
     }
 }

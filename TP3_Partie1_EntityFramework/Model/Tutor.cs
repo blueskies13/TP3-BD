@@ -13,7 +13,7 @@ namespace TP3_Partie1_EntityFramework.Model
         public string EmailAddress { get; set; }
 
         //propriété navigation
-        public ICollection<TutoringSession> Sessions { get; set; }
+        virtual public ICollection<TutoringSession> Sessions { get; set; }
 
         public override String ToString() { return Id + "," + LastName + "," + FirstName + "," + EmailAddress; }
     }

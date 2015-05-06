@@ -13,8 +13,8 @@ namespace TP3_Partie1_EntityFramework.Model
         public int LenghtSession { get; set; }
         
         //Cle etrangere
-        public Tutor Tutor { get; set; }
-        public HelpedStudent Helped { get; set; }
+        virtual public Tutor Tutor { get; set; }
+        virtual public HelpedStudent Helped { get; set; }
 
         public int TutorId { get; set; }
         public int HelpedId { get; set; }
