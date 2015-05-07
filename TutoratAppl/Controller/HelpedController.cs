@@ -14,6 +14,7 @@ namespace TutoratAppl.Controller
     class HelpedController
     {
         IEntityRepository<HelpedStudent> _helpedRepository { get;set; }
+
        public void ListAll() 
         {
             var students = _helpedRepository.GetAll().ToList<HelpedStudent>();
@@ -35,6 +36,30 @@ namespace TutoratAppl.Controller
             _helpedRepository = helpedRepository;
         }
 
-        public void ListWhenWithoutTutoringSession() { }
+        public void ListWhenWithoutTutoringSession() 
+        {
+            var studentsList = _helpedRepository.GetAll();
+            var helpedStudentsWithoutTutoringList = new List<HelpedListVM>();
+            helpedStudentsWithoutTutoringList.Clear();
+            
+            foreach(HelpedStudent helpedStudent in studentsList)
+            {
+                if(helpedStudent.Sessions.Count() == 0)
+                {
+                    helpedStudentsWithoutTutoringList.Add(new HelpedListVM()
+
+                    {
+                        FirstName = helpedStudent.FirstName,
+                        LastName = helpedStudent.LastName,
+                        Id = helpedStudent.Id,
+                        EmailAddress = helpedStudent.EmailAddress
+                    }
+                    );
+                }
+            }
+            HelpedListView helpedListDisplay = new HelpedListView(helpedStudentsWithoutTutoringList);
+
+            helpedListDisplay.Display();
+        }
     }
 }
