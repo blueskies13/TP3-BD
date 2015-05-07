@@ -78,9 +78,11 @@
     <Compile Include="ViewModel\SessionListVM.cs" />
     <Compile Include="ViewModel\TutorListVM.cs" />
     <Compile Include="ViewModel\HelpedListVM.cs" />
+    <Compile Include="ViewModel\WorkingHoursTutorListVM.cs" />
     <Compile Include="View\HelpedListView.cs" />
     <Compile Include="View\SessionListView.cs" />
     <Compile Include="View\TutorListView.cs" />
+    <Compile Include="View\WorkingHoursTutorView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

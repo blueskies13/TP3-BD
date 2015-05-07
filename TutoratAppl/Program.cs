@@ -27,19 +27,30 @@ namespace TutoratAppl
            studentController.ListAll();
            tutoringSessionController.ListAll();
 
+           Console.WriteLine("");
            Console.WriteLine("Requete 1");
-
+           Console.WriteLine("");
+           tutorController.ListAllWithWorkingHoursTotal();
            Console.WriteLine("-------------------------------------------------------------");
+           Console.WriteLine("");
 
+           Console.WriteLine("");
            Console.WriteLine("Requete 2");
-
+           Console.WriteLine("");
+           tutorController.ListWhenNextTutoringSession();
            Console.WriteLine("-------------------------------------------------------------");
+           Console.WriteLine("");
 
+           Console.WriteLine("");
            Console.WriteLine("Requete 3");
+           Console.WriteLine("");
            studentController.ListWhenWithoutTutoringSession();
            Console.WriteLine("-------------------------------------------------------------");
+           Console.WriteLine("");
 
+           Console.WriteLine("");
            Console.WriteLine("Requete 4");
+           Console.WriteLine("");
 
            Console.WriteLine("-------------------------------------------------------------");
         }
