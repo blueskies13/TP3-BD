@@ -51,7 +51,7 @@ namespace TutoratAppl
            Console.WriteLine("");
            Console.WriteLine("Requete 4");
            Console.WriteLine("");
-
+           tutorController.ListWhenWithoutSession(new DateTime(2015, 6, 2));
            Console.WriteLine("-------------------------------------------------------------");
         }
     }

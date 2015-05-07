@@ -96,6 +96,34 @@ namespace TutoratAppl.Controller
             SessionListView sessionsDisplay = new SessionListView(tutorsSessionsVM);
             sessionsDisplay.Display();
         }
-        public void ListWhenWithoutSession(DateTime sessionDate){}
+        public void ListWhenWithoutSession(DateTime sessionDate)
+        {
+            var tutors = _tutorsRepository.GetAll();
+            bool sessionFound = false;
+            var tutorsWithoutSessionVM = new List<TutorListVM>();
+
+            foreach(Tutor tutor in tutors)
+            {
+                sessionFound = false;
+                foreach(TutoringSession tutorSession in tutor.Sessions)
+                {
+                    if(tutorSession.DateSession == sessionDate)
+                    {
+                        sessionFound = true;
+                    }
+                }
+
+                if(!sessionFound)
+                {
+                    tutorsWithoutSessionVM.Add(new TutorListVM()
+                        {
+                            FirstName = tutor.FirstName,
+                            LastName = tutor.LastName,
+                            EmailAddress = tutor.EmailAddress
+                        });
+                }
+            }
+            new TutorListView(tutorsWithoutSessionVM).Display();
+        }
     }
 }
